@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -17,6 +17,11 @@ m::Del
 n::BS
 `;::End
 '::Home
+8::send {Volume_Down}
+9::send {Volume_Up}
+0::send {Volume_Mute}
+-::PrintScreen
+
 
 ;;;;;;;;;;;;;;;;;;;;글자블럭잡기: shift+방향키조합;;;;;;;;;;;;;;;;;;;;
 <+j::
@@ -62,9 +67,14 @@ SendInput {blind}%pfx%{%key%}
 }
  
 Ctrl::
-GetKeyState, cstate, capslock, T
+GetKeyState, cstate, capslock, Tf
 if cstate = U
 SetCapslockState, On
 if cstate = D
 SetCapslockState, Off
 return
+
+
+
+
+
