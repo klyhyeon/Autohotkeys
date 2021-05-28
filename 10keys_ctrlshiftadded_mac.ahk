@@ -78,6 +78,9 @@ return
 LAlt::LWin
 LWin::LAlt
 
+;;;Insert 키 삽입
+RWin::Insert
+
 
 
 
